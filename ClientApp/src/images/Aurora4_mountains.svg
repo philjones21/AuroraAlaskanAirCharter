@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="1200" height="800" version="1.1" viewBox="0 0 317.5 211.67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient2775" x1="131.16" x2="131.51" y1="112.88" y2="210.44" gradientTransform="translate(7e-6 -26.458)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#3f4b81" offset="0"/>
+   <stop stop-color="#8f9acc" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient8692" x1="125.48" x2="87.586" y1="132.03" y2="223.56" gradientTransform="translate(-5e-7 -26.458)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#b7caea" offset="0"/>
+   <stop stop-color="#8988b7" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient14446" x1="264.58" x2="244.74" y1="119.06" y2="171.98" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#73659b" offset="0"/>
+   <stop stop-color="#e7e7ff" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient16775" x1="66.146" x2="90.99" y1="105.83" y2="166.23" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#73659b" offset="0"/>
+   <stop stop-color="#d6d6ff" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g>
+  <path d="m233.5 138.91 17.857-6.6146 13.229-13.229 19.844 6.6146 19.844 19.844 13.229 6.6146 1e-5 33.073-39.688-33.073z" fill="url(#linearGradient14446)"/>
+  <path d="m7e-6 185.21 66.146-33.073 26.458-33.073 13.229-6.6146 26.458-26.458 13.229 6.6146 6.6146 19.844 6.6146-6.6146 19.844 13.229 33.073 13.229 66.146 19.844 39.688 33.073v26.458h-317.5z" fill="url(#linearGradient2775)"/>
+  <path d="m-5e-7 185.21 66.146-33.073 26.458-33.073 13.229-6.6146 26.458-26.458v33.073l-19.844 13.229 26.458-13.229v13.229l-13.229 19.844 26.458 13.229 13.229 19.844 6.6146 26.458h-171.98z" fill="url(#linearGradient8692)"/>
+  <path d="m0 185.21v-39.688l19.844-6.6146 13.229-13.229 19.844-6.6146 13.229-13.229 26.458 13.229-26.458 33.073z" fill="url(#linearGradient16775)"/>
+ </g>
+</svg>
