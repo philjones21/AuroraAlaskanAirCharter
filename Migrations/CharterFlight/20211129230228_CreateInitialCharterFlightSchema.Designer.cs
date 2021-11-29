@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AuroraAlaskanAirCharter.Migrations.CharterFlight
 {
     [DbContext(typeof(CharterFlightContext))]
-    [Migration("20211122020129_SeedDataToProductTable")]
-    partial class SeedDataToProductTable
+    [Migration("20211129230228_CreateInitialCharterFlightSchema")]
+    partial class CreateInitialCharterFlightSchema
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

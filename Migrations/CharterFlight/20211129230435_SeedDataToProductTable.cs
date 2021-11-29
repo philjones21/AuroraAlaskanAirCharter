@@ -12,6 +12,7 @@ namespace AuroraAlaskanAirCharter.Migrations.CharterFlight
                                         VALUES (2, 'Glacier Landing', 'true', 850.00, 150.00);");
         }
 
+
         protected override void Down(MigrationBuilder migrationBuilder)
         {
 
