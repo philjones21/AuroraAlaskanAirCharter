@@ -9,6 +9,10 @@ namespace AuroraAlaskanAirCharter.Models.ViewModels
         public FlightDetailViewModel FlightDetail { get; set; }
 
         [Required]
+        [MaxLength(50)]
+        public string UserName { get; set; }
+
+        [Required]
         [MaxLength(30)]
         public string BillingAddress1 { get; set; }
 

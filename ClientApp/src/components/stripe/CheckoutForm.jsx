@@ -6,6 +6,8 @@ import {
     useElements,
 } from "@stripe/react-stripe-js";
 import { showLayer, hideLayer } from "../../code/SharedFunctions";
+import TextField from '@mui/material/TextField';
+import { Constants } from "../../code/Constants";
  
 
 export default function CheckoutForm({ state }) {
@@ -69,6 +71,7 @@ export default function CheckoutForm({ state }) {
     const handleSubmitOrderButton = () => {
         if (!validateFieldsHandler()) return;
         showLayer("#processing_msg");
+        sessionStorage.setItem('userName', state.userName);
         sessionStorage.setItem('billingAddress1', state.billingAddress1);
         sessionStorage.setItem('billingAddress2', state.billingAddress2);
         sessionStorage.setItem('billingAptSuite', state.billingAptSuite);
@@ -101,13 +104,14 @@ export default function CheckoutForm({ state }) {
 
         setIsLoading(true);
 
-        
+        const protocol = window.location.protocol;
+        const host = window.location.host;
 
         const { error } = await stripe.confirmPayment({
             elements,
             confirmParams: {
             // Make sure to change this to your payment completion page
-            return_url: "https://localhost:44341/Confirmation",
+                return_url: protocol + "//" + host + "/Confirmation",
             },
         });
 
@@ -127,6 +131,21 @@ export default function CheckoutForm({ state }) {
 
     return (
         <section>
+            <div className="textBox" id="card_full_name">
+                <TextField
+                    margin="dense"
+                    label="Full Name"
+                    variant="outlined"
+                    size="small"
+                    fullWidth
+                    required
+                    value={state.userName}
+                    id="userName"
+                    name="userName"
+                    className="confirm_order_textbox_large"
+                    onChange={(event) => state.fieldChangeHandler(event, Constants.TYPE_STRING, 50, 0, 0)}
+                />
+            </div>
             <form id="payment-form" onSubmit={handleSubmit}>
                 <PaymentElement id="payment-element" />
             </form>

@@ -11,7 +11,6 @@ import { Constants } from "../code/Constants";
 import Messages from "./MessagesComponent";
 import DatePicker from '@mui/lab/DatePicker';
 import { createState } from "../code/State";
-import AuthorizeService from "./api-authorization/AuthorizeService";
 
 
 
@@ -63,19 +62,6 @@ class BookFlight extends Component {
 
     componentDidMount() {
         this.state.getAvailableDates(new Date(Date.now()));
-
-        //for some reason the page can sometimes load before Authentication
-        //so this is some defensive code to try and prevent that.
-        AuthorizeService.isAuthenticated().then((result) => {
-            if (result === true) {
-                this.state.setFieldByName("loggedIn", true);
-            } else {
-                this.state.setFieldByName("loggedIn", false);
-            }
-        }).catch((e: Error) => {
-            console.log(e.message);
-        });
-
     }
 
     render() {
@@ -87,8 +73,8 @@ class BookFlight extends Component {
 
 
             <section>
-                {this.state.loggedIn === true && <section className="message_layer"><Messages state={this.state} /></section>}
-                {this.state.loggedIn === true && <section className="book_flight_group">
+                <section className="message_layer"><Messages state={this.state} /></section>
+                <section className="book_flight_group">
                     <h3>Book Flight</h3>
                     <div className="asteriskText"><br />(* required field)</div>
                     <section className="book_flight_box">
@@ -216,7 +202,7 @@ class BookFlight extends Component {
                             {this.state.goToNextPage == true && <Redirect push to="/Checkout" />}
                         </section>
                     </section>
-                </section>}
+                </section>
             </section>
         )
     }

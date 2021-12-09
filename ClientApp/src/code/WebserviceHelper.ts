@@ -21,6 +21,7 @@ export interface IFlightDetails {
 //Interface to define purchase order data format for client/server communication.
 export interface IPurchaseOrder {
     flightDetail: IFlightDetails,
+    userName: string,
     billingAddress1: string,
     billingAddress2?: string,
     billingAptSuite?: string,

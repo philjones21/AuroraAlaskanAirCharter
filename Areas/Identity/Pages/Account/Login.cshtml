@@ -74,10 +74,11 @@
                 {
                     <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
                         <div>
+                            
                             <p>
                                 @foreach (var provider in Model.ExternalLogins)
                                 {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                <button type="submit" style="padding: 10px; background-color:rgb(46 54 108); border-radius:30px; border-width:1px;" class="" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account"><img style="width:100px;" src="/images/google_logo.png" alt="Google" /></button>
                                 }
                             </p>
                         </div>

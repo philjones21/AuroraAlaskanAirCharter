@@ -21,6 +21,8 @@ class Confirmation extends React.Component {
         const numOfPassengers = sessionStorage.getItem('numOfPassengers');
         if (numOfPassengers != null) this.state.setFieldByName("numOfPassengers", parseInt(numOfPassengers));
 
+        const userName = sessionStorage.getItem('userName');
+        if (userName != null) this.state.setFieldByName("userName", userName);
         const billingAddress1 = sessionStorage.getItem('billingAddress1');
         if (billingAddress1 != null) this.state.setFieldByName("billingAddress1", billingAddress1);
         const billingAddress2 = sessionStorage.getItem('billingAddress2');

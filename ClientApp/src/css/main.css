@@ -57,6 +57,10 @@ header {
         animation-delay: .5s;
     }
 
+    header .logo2 {
+        width: 400px;
+    }
+
     header ul {
         display: flex;
         justify-content: center;
@@ -147,7 +151,7 @@ header {
     .navigation_menu ul li:nth-child(2),
     .navigation_menu ul li:nth-child(3),
     .navigation_menu ul li:nth-child(4),
-    .navigation_menu ul li:nth-child(5) {
+    .navigation_menu ul li:nth-child(5){
         animation-delay: 0s !important;
     }
 
@@ -213,8 +217,8 @@ header {
     }
 
     100% {
-        transform: translateX(0);
-        opacity: 100;
+        transform: translateX(0px);
+        opacity: 1;
     }
 }
 
@@ -225,8 +229,8 @@ header {
     }
 
     100% {
-        transform: translateX(0);
-        opacity: 100;
+        transform: translateX(0px);
+        opacity: 1;
     }
 }
 
@@ -237,7 +241,7 @@ header {
     }
 
     100% {
-        transform: translateY(0);
+        transform: translateY(0px);
         opacity: 1;
     }
 }
@@ -495,16 +499,16 @@ header {
 
 @keyframes cards_overlay_animation {
     0% {
-        background-color: rgba(20,20,70,.0)
+        background-color: rgba(20,20,70,.0);
     }
 
     100% {
-        background-color: rgba(20,20,70,.8)
+        background-color: rgba(20,20,70,.8);
     }
 }
 
 .cards_overlay.active {
-    background-color: rgba(20,20,70,.8)
+    background-color: rgba(20,20,70,.8);
 }
 
 .cards_overlay.active {
@@ -516,16 +520,16 @@ header {
 
 
     0% {
-        background-color: rgba(20,20,70,.8)
+        background-color: rgba(20,20,70,.8);
     }
 
     100% {
-        background-color: rgba(20,20,70,.0)
+        background-color: rgba(20,20,70,.0);
     }
 }
 
 .cards_overlay.in-active {
-    background-color: rgba(20,20,70,.0)
+    background-color: rgba(20,20,70,.0);
 }
 
 .cards_overlay.in-active {
@@ -538,7 +542,7 @@ header {
 }
 
     .card.active {
-        transform: translateY(0);
+        transform: translateY(0px);
     }
 
 
@@ -780,7 +784,7 @@ header {
     }
 
     100% {
-        opacity: 100;
+        opacity: 1;
     }
 }
 
@@ -863,18 +867,19 @@ header {
     color: rgb(19 70 146);
 }
 
-#shopping_header{
+#shopping_header {
     position: relative;
-    display:flex;
+    display: flex;
     flex-direction: row;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     padding: 0 75px 0 20px;
-    
+    z-index: 0;
 }
 
 
 .checkout {
-    background: rgb(99 130 177);
+    /*background: rgb(99 130 177);*/
+    background: linear-gradient(to bottom, #3a66ab, #f1f5f6);
     display: block;
 }
 
@@ -886,7 +891,7 @@ header {
     min-height: 100vh;
     padding: 0 50px 50px 50px;
     /*background: linear-gradient(to bottom, #3a66ab, #f1f5f6);*/
-    background: rgb(99 130 177);
+    /*background: rgb(99 130 177);*/
 }
 
     .check_out_container.order_confirm {
@@ -1059,13 +1064,17 @@ header {
     font-size: 2rem;
 }
 
+#card_full_name {
+    margin-bottom:16px;
+}
+
 
 .order_summary_row_group {
     display: flex;
     flex-direction: row;
-    flex-wrap:nowrap;
-    align-items:center;
-    justify-content:space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
     margin: 10px 0 0 0;
 }
 
@@ -1106,6 +1115,9 @@ header {
     padding: 5px;
 }
 
+.prices.help_text{
+    margin-top: 30px;
+}
 
 .stripe-form {
     width: 30vw;
@@ -1228,3 +1240,22 @@ header {
     }
 }
     */
+
+.processing_login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .8);
+}
+    .processing_login > div {
+        color: #fff;
+        font-size: 2rem;
+    }

@@ -3,6 +3,7 @@ import { Component } from 'react';
 import authService from './AuthorizeService';
 import { AuthenticationResultStatus } from './AuthorizeService';
 import { QueryParameterNames, LogoutActions, ApplicationPaths } from './ApiAuthorizationConstants';
+import { Redirect } from 'react-router-dom';
 
 // The main responsibility of this component is to handle the user's logout process.
 // This is the starting point for the logout process, which is usually initiated when a
@@ -14,7 +15,8 @@ export class Logout extends Component {
         this.state = {
             message: undefined,
             isReady: false,
-            authenticated: false
+            authenticated: false,
+            redirectHome: false
         };
     }
 
@@ -33,7 +35,11 @@ export class Logout extends Component {
                 this.processLogoutCallback();
                 break;
             case LogoutActions.LoggedOut:
-                this.setState({ isReady: true, message: "You successfully logged out!" });
+                this.setState({
+                    isReady: true,
+                    message: "You successfully logged out!",
+                    redirectHome: true
+                });
                 break;
             default:
                 throw new Error(`Invalid action '${action}'`);
@@ -43,21 +49,24 @@ export class Logout extends Component {
     }
 
     render() {
-        const { isReady, message } = this.state;
+        const { isReady, message, redirectHome } = this.state;
         if (!isReady) {
             return <div></div>
         }
         if (!!message) {
-            return (<div>{message}</div>);
+            return (<section className="processing_login">
+                <div>{message}</div>
+                {redirectHome === true && <Redirect to="/" />}
+            </section>);
         } else {
             const action = this.props.action;
             switch (action) {
                 case LogoutActions.Logout:
-                    return (<div>Processing logout</div>);
+                    return (<section className="processing_login"><div>Processing logout...</div></section>);
                 case LogoutActions.LogoutCallback:
-                    return (<div>Processing logout callback</div>);
+                    return (<section className="processing_login"><div>Processing logout...</div></section>);
                 case LogoutActions.LoggedOut:
-                    return (<div>{message}</div>);
+                    return (<section className="processing_login"><div>{message}</div></section>);
                 default:
                     throw new Error(`Invalid action '${action}'`);
             }

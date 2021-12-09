@@ -29,15 +29,14 @@ const About = () => {
                         <h2>About</h2><br />
                         <h3>Aurora Alaskan Air Charter</h3>
                         <article>
-                            This demonstration Web Application is premised on a fictitional Air Taxi/Charter company
+                            This demonstration Single Page Web Application is premised on a fictitional Air Taxi/Charter company
                             called Aurora Alaskan Air Charters that operates near the Mt. Wrangell/St. Elias National Park in
-                            Alaska.  This web app was built with a React front-end and .Net Core on the server side. It uses .Net Core
-                            Identity for user management and also allows for Google account login using AuthO 2.0. It also utilizes
-                            Stripe .Net for Credit Card Payment processing (using fake test data). This web app is Containerized with
-                            Docker and deployed to the MS Azure Cloud.
+                            Alaska.  This web app was built with .Net Core/C# and a React/Typescript front-end. It utilizes Entity Framework ORM,
+                            Restful API's, .Net Identity Server for User Management, JWT Tokens, OAuth2.0, and Stripe API for Credit Card Payment processing.
+                            This web app is Containerized with Docker, runs on Linux OS, and is deployed to the MS Azure Cloud.
                             <br/><br/>
-                            Feel free to explore and book an order for a flight using fake data. When logging in, you will see
-                            a demo user ID you can use and on the "Check Out" page there is a fake Credit Card Number you can use.
+                            Feel free to explore and book an order for a flight using fake data. On the "Check Out" page there is a
+                            fake Credit Card Number you can use.
                         </article>
                         <Link to="/SelectFlight">Book a Tour</Link>
                     </section>

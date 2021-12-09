@@ -26,7 +26,7 @@ const ShoppingHeader = ({step}) => {
     //<img className="cart_image" src={cartLogo} alt="" />
    return (
         <header id="shopping_header">          
-           <Link to="/" ><img className="logo" src={logo} alt="" /></Link>
+           <Link to="/" ><img className="logo2" src={logo} alt="" /></Link>
            {cartLogo === Constants.SELECT_FLIGHT && <svg className="cart_image" width="450" height="150" version="1.1" viewBox="0 0 595.31 198.44" >
                <path d="m26.458 105.83h529.17" fill="none" stroke="#969696" stroke-width="4.1906" />
                <path d="m26.458 105.72h317.5" fill="none" stroke="#7f11ee" stroke-width="7.0711" />

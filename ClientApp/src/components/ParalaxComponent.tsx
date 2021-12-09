@@ -1,6 +1,6 @@
 ﻿import React, { useEffect } from "react";
 
-const plane = require("../images/Aurora4_plane3.svg") as string;
+const plane = require("../images/Aurora4_plane4.svg") as string;
 const mountains = require("../images/Aurora4_mountains.svg") as string;
 const trees = require("../images/Aurora4_trees.svg") as string;
 const sky = require("../images/Aurora4_sky.svg") as string;

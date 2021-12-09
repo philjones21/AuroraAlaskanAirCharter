@@ -27,6 +27,7 @@ export function createState(inParentComponent) {
         bookedReturnDatesMap: null,
 
         //BillingAddress UI fields
+        userName: '',
         billingAddress1: '',
         billingAddress2: '',
         billingAptSuite: '',
@@ -514,6 +515,12 @@ export function createState(inParentComponent) {
         validateCheckoutInputFields: function (): string[] {
             let errorMsg: string[] = [];
 
+            const validateUserName = () => {
+                if (this.state.userName === null || this.state.userName === "") {
+                    errorMsg.push("Full Name is missing.");
+                }
+            }
+
             const validateBillingAddress1 = () => {
                 if (this.state.billingAddress1 === null || this.state.billingAddress1 === "") {
                     errorMsg.push("Billing Address1 missing.");
@@ -635,6 +642,7 @@ export function createState(inParentComponent) {
             }
             
             //call all the validation functions.
+            validateUserName();
             validateBillingAddress1();
             validateBillingCity();
             validateBillingState();
@@ -860,6 +868,7 @@ export function createState(inParentComponent) {
                     const webserviceHelper = new WebserviceHelper();
                     orderNo = await webserviceHelper.submitOrder({
                         flightDetail: flightDetailForPurchaseOrder,
+                        userName: this.state.userName,
                         billingAddress1: this.state.billingAddress1,
                         billingAptSuite: this.state.billingAptSuite,
                         billingCity: this.state.billingCity,
