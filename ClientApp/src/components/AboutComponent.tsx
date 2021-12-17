@@ -29,7 +29,7 @@ const About = () => {
                         <h2>About</h2><br />
                         <h3>Aurora Alaskan Air Charter</h3>
                         <article>
-                            This demonstration Single Page Web Application is premised on a fictitional Air Taxi/Charter company
+                            This demonstration Single Page Web Application is premised on a fictional Air Taxi/Charter company
                             called Aurora Alaskan Air Charters that operates near the Mt. Wrangell/St. Elias National Park in
                             Alaska.  This web app was built with .Net Core/C# and a React/Typescript front-end. It utilizes Entity Framework ORM,
                             Restful API's, .Net Identity Server for User Management, JWT Tokens, OAuth2.0, and Stripe API for Credit Card Payment processing.
